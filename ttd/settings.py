@@ -77,8 +77,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'ttd',
-        'USER': get_env_variable('TTD_DEV_USERNAME'),
-        'PASSWORD': get_env_variable('TTD_DEV_PASSWORD')
+        'USER': os.environ['TTD_DEV_USERNAME'],
+        'PASSWORD': os.environ['TTD_DEV_PASSWORD'],
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
