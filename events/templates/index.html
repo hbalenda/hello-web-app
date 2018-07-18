@@ -1,1 +1,23 @@
-<h1>🐈</h1>
+{% extends 'base.html' %}
+{% load humanize %}
+
+{% block title %}
+  Cats - {{ block.super }}
+{% endblock title %}
+
+{% block content %}
+  <div class="row">
+    <div class="card-deck">
+    {% for event in events %}
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{ event.name }}</h5>
+          {% if event.subtitle %}<h6 class="card-subtitle mb-2 text-muted">{{ event.subtitle }}</h6>{% endif %}
+          <p class="card-text">{{ event.description|truncatewords:25 }}</p>
+          <a href="events/{{ event.slug }}" class="align-self-end">Details</a>
+        </div>
+      </div>
+    {% endfor %}
+    </div>
+  </div>
+{% endblock content %}
