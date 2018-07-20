@@ -14,5 +14,7 @@ urlpatterns = [
       name='contact'),
   path('events/<slug>/', views.event_detail,
     name='event_detail'),
+  path('events/<slug>/edit',
+    views.edit_event, name='edit_event'),
   path('admin/', admin.site.urls),
 ]
