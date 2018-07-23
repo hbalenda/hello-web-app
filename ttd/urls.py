@@ -9,6 +9,7 @@ from django.contrib.auth.views import (
   password_change,
   password_change_done,
 )
+from events.backends import MyRegistrationView
 
 from events import views
 
@@ -24,6 +25,11 @@ urlpatterns = [
     name='event_detail'),
   path('events/<slug>/edit',
     views.edit_event, name='edit_event'),
+  path('accounts/account/', views.account, name="account"),
+  path('accounts/register/', MyRegistrationView.as_view(),
+    name='registration_register'),
+  path('accounts/create_event/', views.create_event,
+    name='registration_create_event'),
   path('accounts/password/reset/', password_reset,
     {'template_name': 'registration/password_reset_form.html'},
     name="password_reset"),

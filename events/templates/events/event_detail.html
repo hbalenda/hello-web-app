@@ -12,9 +12,11 @@
         <h5 class="card-title">{{ event.name }}</h5>
         {% if event.subtitle %}<h6 class="card-subtitle mb-2 text-muted">{{ event.subtitle }}</h6>{% endif %}
         <p class="card-text">{{ event.description }}</p>
-        <a href="{% url 'edit_event' slug=event.slug %}">
-          Edit
-        </a>
+        {% if user == event.user %}
+          <a href="{% url 'edit_event' slug=event.slug %}">
+            Edit
+          </a>
+        {% endif %}
       </div>
     </div>
   </div>
