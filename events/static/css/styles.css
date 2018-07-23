@@ -4,6 +4,10 @@ body {
   height:100vh;
 }
 
+a.active {
+  filter: brightness(70%);
+}
+
 nav {
   border-bottom: 1px solid #333232;
 }
@@ -18,4 +22,8 @@ nav {
 
 .main-content a {
   color: #F7ADAD;
+}
+
+.events {
+  margin-top:20px;
 }

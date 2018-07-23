@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}
+  Browse {{ block.super }}
+{% endblock title %}
+
+{% block content %}
+
+  <h1>
+    {% if not initial %}Browse {% endif %}Events{% if initial %} Starting with '{{ initial }}'{% endif %}
+  </h1>
+  <div class="index">
+    {% for letter in 'abcdefghijklmnopqrstuvwxyz' %}
+      <a href="{% url 'browse_by_name' initial=letter %}" {% if initial == letter %} class="active"{% endif %}>{{ letter }}</a>
+    {% endfor %}
+  </div>
+  <div class="events">
+    {% for event in events %}
+      <h4><a href="{% url 'event_detail' slug=event.slug %}">{{ event.name }}</a></h4>
+    {% empty %}
+      <p>Sorry, no results!</p>
+    {% endfor %}
+  </div>
+{% endblock content %}
