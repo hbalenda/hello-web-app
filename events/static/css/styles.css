@@ -1,0 +1,29 @@
+body {
+  color: #333232;
+  width:100vw;
+  height:100vh;
+}
+
+a.active {
+  filter: brightness(70%);
+}
+
+nav {
+  border-bottom: 1px solid #333232;
+}
+
+.main-content {
+  margin-top:20px;
+  display:flex;
+  align-items: center;
+  flex-direction:column;
+  justify-content: center;
+}
+
+.main-content a {
+  color: #F7ADAD;
+}
+
+.events {
+  margin-top:20px;
+}

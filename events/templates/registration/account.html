@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Account - {{ block.super }}
+{% endblock title %}
+
+{% block content %}
+  <h1>Account</h1>
+  <p>
+    <a href="{% url 'password_change_form' %}">Need to change ur password?</a>
+  </p>
+  {% if events %}
+    <h3>Ur Events</h3>
+    <ul>
+    {% for event in events %}
+      <li>{{ event.name }} - <a href="{% url 'edit_event' slug=event.slug %}">Edit</a></li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endblock content %}
+
