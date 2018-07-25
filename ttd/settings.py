@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 
+from dotenv import load_dotenv
+load_dotenv()
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -79,8 +82,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'ttd',
-        'USER': os.environ['TTD_DEV_USERNAME'],
-        'PASSWORD': os.environ['TTD_DEV_PASSWORD'],
+        'USER': os.getenv('TTD_DEV_USERNAME'),
+        'PASSWORD': os.getenv('TTD_DEV_PASSWORD'),
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
