@@ -10,6 +10,8 @@ django = "*"
 gunicorn = "*"
 python-dotenv = "*"
 django-registration-redux = "*"
+django-heroku = "*"
+dj-database-url = "*"
 
 [dev-packages]
 
