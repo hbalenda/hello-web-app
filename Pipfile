@@ -12,6 +12,7 @@ python-dotenv = "*"
 django-registration-redux = "*"
 django-heroku = "*"
 dj-database-url = "*"
+whitenoise = "*"
 
 [dev-packages]
 
