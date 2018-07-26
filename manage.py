@@ -2,11 +2,8 @@
 import os
 import sys
 
-from dotenv import load_dotenv
-load_dotenv(".env")
-
 if __name__ == "__main__":
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", os.getenv('SETTINGS'))
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", os.environ['SETTINGS'])
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
